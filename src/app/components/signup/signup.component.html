@@ -1,0 +1,105 @@
+<section class="wrapper">
+  <div class="fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <i class="fa-3x bi bi-person-circle"></i>
+        <!-- <img src="../" id="icon" alt="User Icon" /> -->
+      </div>
+
+      <!-- Register Form -->
+      <form [formGroup]="signupForm">
+        <div>
+          <input
+            formControlName="name"
+            type="text"
+            id="name"
+            class="fadeIn second"
+            name="name"
+            placeholder="name"
+            [(ngModel)]="name"
+          />
+        </div>
+        <div>
+          <small
+            style="color: red"
+            class="p-error"
+            *ngIf="this.signupForm.controls['name'].invalid && submitted"
+            >name is required</small
+          >
+        </div>
+        <div>
+          <input
+            type="text"
+            id="email"
+            class="fadeIn third"
+            formControlName="email"
+            name="email"
+            placeholder="email"
+            [(ngModel)]="email"
+          />
+        </div>
+        <small
+          style="color: red"
+          class="p-error"
+          *ngIf="this.signupForm.controls['email'].invalid && submitted"
+          >email is required</small
+        >
+        <div>
+          <input
+            formControlName="phno"
+            type="text"
+            id="phno"
+            class="fadeIn second"
+            name="phno"
+            placeholder="phone number"
+            [(ngModel)]="phno"
+          />
+        </div>
+        <div>
+          <small
+            style="color: red"
+            class="p-error"
+            *ngIf="this.signupForm.controls['phno'].invalid && submitted"
+            >phone number is required</small
+          >
+        </div>
+
+        <div>
+          <input
+            formControlName="password"
+            type="password"
+            id="password"
+            class="fadeIn third"
+            name="Register"
+            placeholder="password"
+            [(ngModel)]="password"
+          />
+        </div>
+        <div>
+          <small
+            style="color: red"
+            class="p-error"
+            *ngIf="this.signupForm.controls['password'].invalid && submitted"
+            >password is required</small
+          >
+        </div>
+
+        <input
+          type="button"
+          [disabled]="!signupForm.valid"
+          (click)="signUp(); register()"
+          class="btn btn-primary"
+          value="Register"
+        />
+      </form>
+
+      <div id="formFooter">
+        <span>create an account </span>
+        <a class="underlineHover" routerLink="/login">Login</a>
+      </div>
+    </div>
+  </div>
+</section>

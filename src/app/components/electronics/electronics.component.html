@@ -1,0 +1,225 @@
+
+<body style="height: 100%; width: 100%; background-color: white">
+  <header>
+    <div class="navbar navbar-darkshadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="searchTerm"
+            (keyup)="search($event)"
+            placeholder="search products"
+           style="margin-left: 600px; width: 300px;"
+          />
+        </div>
+      </div>
+      <button routerLink="/cart">
+        <img src="https://www.kindpng.com/picc/m/353-3535252_marketplace-shopping-cart-graphic-with-bag-inside-shopping.png" style="width: 30px; height: 30px" />
+        <div style="font-size: 10px" class="badge bg-danger">
+          {{ totalItem }}
+        </div>
+      </button>
+    </div>
+  </header>
+</body>
+
+<div class="filter">
+  <button
+    class="btn btn-default"
+    type="button"
+    data-toggle="collapse"
+    data-target="#mobile-filter"
+    aria-expanded="true"
+    aria-controls="mobile-filter"
+  >
+    Filters<span class="fa fa-filter pl-1"></span>
+  </button>
+</div>
+
+<div class="container-fluid">
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2">
+          <div class="border-bottom pb-2 ml-2">
+            <h4 id="burgundy">Filters</h4>
+          </div>
+          <div class="py-2 border-bottom ml-3">
+            <h6 class="font-weight-bold">Categories</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+              <form>
+                <div class="item">
+                  <a (click)="filter('')">
+                    <h6>All products</h6>
+                  </a>
+                </div>
+                <div class="item">
+                  <a (click)="filter('Laptop')">
+                    <h6>Laptop</h6>
+                  </a>
+                </div>
+                <div class="item">
+                  <a (click)="filter('Television')">
+                    <h6>Television</h6>
+                  </a>
+                </div>
+                <div class="item">
+                  <a (click)="filter('AC')">
+                    <h6>Air Conditioner</h6>
+                  </a>
+                </div>
+                <div class="item">
+                  <a (click)="filter('Mobile')">
+                    <h6>Mobile</h6>
+                  </a>
+                </div>
+              </form>
+              <!-- Rating -->
+              <div class="py-3">
+                <h5 class="font-weight-bold">Rating</h5>
+                <form class="rating">
+                  <a (click)="rfilter('5')">
+                    <div
+                      class="form-inline d-flex align-items-center py-2"
+                      value="5"
+                    >
+                      <label class="tick">
+                        <input type="checkbox" />&nbsp;
+
+                        <span class="check">
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </a>
+                  <a (click)="rfilter('4')">
+                    <div
+                      class="form-inline d-flex align-items-center py-2"
+                      value="4"
+                    >
+                      <label class="tick">
+                        <input type="checkbox" />&nbsp;
+
+                        <span class="check">
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </a>
+                  <a (click)="rfilter('3')">
+                    <div
+                      class="form-inline d-flex align-items-center py-2"
+                      value="3"
+                    >
+                      <label class="tick">
+                        <input type="checkbox" />&nbsp;
+
+                        <span class="check"
+                          ><span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </a>
+                  <a (click)="rfilter('2')">
+                    <div
+                      class="form-inline d-flex align-items-center py-2"
+                      value="2"
+                    >
+                      <label class="tick">
+                        <input type="checkbox" />&nbsp;
+
+                        <span class="check"
+                          ><span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </a>
+                  <a (click)="rfilter('1')">
+                    <div
+                      class="form-inline d-flex align-items-center py-2"
+                      value="1"
+                    >
+                      <label class="tick">
+                        <input type="checkbox" /> &nbsp;
+
+                        <span class="check">
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                          <span class="far fa-star px-1 text-muted"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </a>
+                </form>
+              </div>
+            </form>
+          </div>
+
+          <div class="py-2 ml-3">
+            <h6 class="font-weight-bold">Top Offers</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+              <div class="form-group">
+                <input type="checkbox" (click)="PriceLowtoHigh()" /><label>Price: Low to High</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" (click)="PriceHighToLow()"/><label>Price: High to Low</label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-10">
+          <div class="row">
+            <div
+              *ngFor="
+                let item of filterCategory | filter: searchKey:'productitle'
+              "
+              class="card col-lg-3 mt-5 mb-3"
+              style="margin-left: 70px"
+            >
+              <img
+                class="img-thumbnail"
+                src="{{ item.productimg }}"
+                style="width: 450px; height: 200px; object-fit: contain"
+              />
+              <div class="card-body text-center mx-auto">
+                <div class="cvp">
+                  <h5 class="card-title font-weight-bold">
+                    {{ item.productitle }}
+                  </h5>
+                  <p class="card-text">{{ item.productprice | currency }}</p>
+                  <a href="#" class="btn details px-auto">view details</a>
+                  <br />
+                  <a class="btn cart px-auto" (click)="user(item)">
+                    CART <i class="fa fa-shopping-basket"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

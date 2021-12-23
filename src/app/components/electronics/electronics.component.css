@@ -1,0 +1,96 @@
+
+#burgundy {
+  color: rgb(153, 40, 59)
+}
+
+#orange,
+select,
+.btn {
+  color: orange
+}
+
+.form-group {
+  margin-bottom: 5px
+}
+
+label {
+  padding-left: 10px
+}
+
+.form-group:last-child {
+  margin-bottom: 0
+}
+
+.btn {
+  border: 1px solid orange;
+  color: white;
+  border-radius: 10px;
+  background-color: #fff
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: orange
+}
+
+@media(min-width:1200px) {
+  #sidebar {
+      width: 15%;
+      padding: 20px;
+      float: left
+  }
+
+  #products {
+      width: 85%;
+      float: right
+  }
+  .filter,
+  #mobile-filter {
+      display: none
+  }
+}
+
+
+/* Product */
+
+.details {
+  border: 1.5px solid grey;
+  color: #212121;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 0px 10px #212121
+}
+
+.cart {
+  /* background-color: #212121; */
+  color: white;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  width: 60%;
+  height: 45px;
+  padding-top: 5px;
+  box-shadow: 0px 5px 10px #212121
+}
+
+.card-body {
+  width: fit-content
+}
+
+.btn {
+  border-radius: 0
+}
+
+.img-thumbnail {
+  border: none
+}
+
+.card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  padding-bottom: 10px
+}
+
+.fas{
+  color: rgb(255, 145, 0);
+}

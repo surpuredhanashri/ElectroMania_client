@@ -1,0 +1,92 @@
+<!-- Navbar Page -->
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: #3e4e4c"
+>
+  <div class="container" style="max-width: 100%">
+    <ul class="nav">
+      <img
+        src="https://st4.depositphotos.com/20435048/23412/v/1600/depositphotos_234121178-stock-illustration-shopping-cart-logo-design-cart.jpg"
+        style="width: 120px; height: 60px"
+      />
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/home"
+          style="color: white; padding-top: 15px"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/about"
+          style="color: white; padding-top: 15px"
+          >About</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/electronics"
+          style="color: white; padding-top: 15px"
+          >Product</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/contact"
+          style="color: white; padding-top: 15px"
+          >Contact</a
+        >
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li>
+        <button
+          routerLink="/login"
+          class="btn btn-danger mx-2"
+          style="color: white"
+        >
+          Login
+        </button>
+      </li>
+      <li>
+        <button
+          routerLink="/signup"
+          class="btn btn-danger mx-2"
+          style="color: white"
+        >
+          Register
+        </button>
+      </li>
+    </ul>
+
+    <ul *ngIf="isLoggedIn">
+      <li class="nav-item form-inline">
+        <h4
+          style="
+            color: white;
+            padding-top: 15px;
+            padding-left: 5px;
+            font-size: larger;
+          "
+        >
+          {{ name }}
+        </h4>
+        <button
+          class="btn btn-danger mx-2"
+          (click)="logout()"
+          style="color: white"
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
