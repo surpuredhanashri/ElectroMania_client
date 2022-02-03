@@ -53,6 +53,10 @@ export class CartComponent implements OnInit {
   checkoutForm = new FormGroup({
     phno: new FormControl(),
   });
+
+  orderhistroy(){
+    
+  }
   //payment with stripe
   pay(amount: any) {
     amount = this.grandTotal;
